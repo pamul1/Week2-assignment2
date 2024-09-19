@@ -4,32 +4,33 @@ function songValidation(){
 
     event.preventDefault()
     let songName=inputSongName.value
-    let bandArtistName=inputBrandArtistName.value
+    let bandArtistName=inputBandArtistName.value
     let songDuration=parseInt(inputSongDuration.value)
+
+
 
     let validationSongName = false
     let validationBandArtistName = false
     let validationDuration = false
 
     if (songName.length === 0){
-        console.log("enter name of song")
+        errorName.innerHTML = "enter name of song"
         
     } else {
         validationSongName = true
     }
 
-    if (brandArtistName.length === 0 ){
-        console.log("enter name of band artist")
+    if (bandArtistName.length === 0 ){
+        errorBandArtist.innerHTML = "enter name of band artist"
     } else {
-        validationBandArtis = true
+        validationBandArtistName = true
         
     }
 
-
-    if ( duration < 300 ) {
+    if ( songDuration < 300 ) {
         validationDuration= true
     }else{
-        console.log("Duration must be less then 300 seconds")
+        errorDuration.innerHTML = "Duration must be less then 300 seconds"
     }
 
     if (validationSongName === true && validationBandArtistName === true && validationDuration === true){
@@ -48,12 +49,14 @@ function songValidation(){
 
         for (let i=0; i<data.length; i++){
             tableLayout+=`<tr>
-            <td>${data[i].song}</td>
-            <td>${data[i].bandartist}</td>
-            <td>${data[i].duration}</td>
+            <td>${data[i].songName}</td>
+            <td>${data[i].bandArtistName}</td>
+            <td>${data[i].songDuration}</td>
             </tr>`;
         }
+
+        songTable.innerHTML = tableLayout
     }
 
-    songTable.innerHTML = tableLayout
+   
 }

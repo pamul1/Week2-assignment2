@@ -2,3 +2,7 @@ input {
     display: block;
     margin-bottom: 15px;
 }
+.error{
+    color: brown;
+    display: block;
+}

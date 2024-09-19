@@ -9,17 +9,22 @@
 <body>
     <form onsubmit="songValidation()">
         <label>Song Name</label>
+        <span class="error" id="errorName"></span>
         <input id="inputSongName" type="text">
 
-        <label>Brand Artist Name</label>
+        <label>Band Artist Name</label>
+        <span class="error" id="errorBandArtist"></span>
         <input id="inputBandArtistName" type="text">
 
         <label>Song Duration</label>
+        <span class="error" id="errorDuration"></span>
         <input id="inputSongDuration" type="number">
 
         <button>Send</button>
     </form>
 
-    <script scr="script.js"></script>
+    <table id="songTable"></table>
+
+    <script src="script.js"></script>
 </body>
 </html>
